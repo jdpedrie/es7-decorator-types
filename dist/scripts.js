@@ -40,6 +40,16 @@ var Person = (function () {
     value: function siblings(_siblings) {
       this.data.siblings = _siblings;
     }
+  }, {
+    key: "phoneNumber",
+    decorators: [(0, _typeCheckerJs2["default"])(_typesJs2["default"].number, _typesJs2["default"].number, _typesJs2["default"].number)],
+    value: function phoneNumber(areaCode, firstThree, lastFour) {
+      this.data.phoneNumber = {
+        areaCode: areaCode,
+        firstThree: firstThree,
+        lastFour: lastFour
+      };
+    }
   }]);
 
   return Person;
@@ -49,6 +59,7 @@ var john = new Person();
 john.firstName("John");
 john.lastName("Pedrie");
 john.siblings(["Katie", "Margaret", "Rebekah", "James"]);
+john.phoneNumber(555, 555, 1234);
 
 console.log(john.data);
 
