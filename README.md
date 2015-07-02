@@ -66,7 +66,7 @@ function addFriend(friendInstance) {
   // do stuff
 }
 
-addFried(friend);
+addFriend(friend);
 ````
 
 Currently implemented methods include:
