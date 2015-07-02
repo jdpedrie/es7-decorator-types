@@ -15,6 +15,16 @@ export default {
     return (typeof val === 'object');
   },
 
+  class: function(className) {
+    return function(val) {
+      if (val.constructor !== null) {
+        return (val.constructor.name === className);
+      }
+
+      return false;
+    };
+  },
+
   any: function(val) {
     return true;
   }

@@ -31,6 +31,11 @@ class Person {
       lastFour: lastFour
     };
   }
+
+  @Strict(Types.class('Person'))
+  spouse(person) {
+    this.data.spouse = person;
+  }
 }
 
 var john = new Person;
@@ -38,5 +43,11 @@ john.firstName('John');
 john.lastName('Pedrie');
 john.siblings(['Katie', 'Margaret', 'Rebekah', 'James']);
 john.phoneNumber(555, 555, 1234);
+
+var katelynn = new Person;
+katelynn.firstName('Katelynn');
+katelynn.lastName('Pedrie');
+
+john.spouse(katelynn);
 
 console.log(john.data);

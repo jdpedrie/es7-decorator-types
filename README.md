@@ -50,6 +50,25 @@ pet.setPetAge('about 12'); // error!
 Types are tested against methods on the Types object. Each method must return a
 boolean result (true for pass, false for fail).
 
+The `Strict` decorator expects function references as arguments. Any function
+reference that returns a boolean value is allowed. This allows for more complex
+validation, as in the case of the `class` type checker referenced below. Where
+the majority of the implemented type checkers are passed to the decorator
+directly, `class` is invoked with the class name to match the argument against.
+
+For example:
+
+````js
+var friend = new Person;
+
+@Strict(Types.class('Person'))
+function addFriend(friendInstance) {
+  // do stuff
+}
+
+addFried(friend);
+````
+
 Currently implemented methods include:
 
 * `string`
@@ -57,3 +76,4 @@ Currently implemented methods include:
 * `number`
 * `object`
 * `any`
+* `class`

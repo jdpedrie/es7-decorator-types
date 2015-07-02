@@ -50,6 +50,12 @@ var Person = (function () {
         lastFour: lastFour
       };
     }
+  }, {
+    key: "spouse",
+    decorators: [(0, _typeCheckerJs2["default"])(_typesJs2["default"]["class"]("Person"))],
+    value: function spouse(person) {
+      this.data.spouse = person;
+    }
   }]);
 
   return Person;
@@ -60,6 +66,12 @@ john.firstName("John");
 john.lastName("Pedrie");
 john.siblings(["Katie", "Margaret", "Rebekah", "James"]);
 john.phoneNumber(555, 555, 1234);
+
+var katelynn = new Person();
+katelynn.firstName("Katelynn");
+katelynn.lastName("Pedrie");
+
+john.spouse(katelynn);
 
 console.log(john.data);
 
@@ -144,6 +156,16 @@ exports['default'] = {
 
   object: function object(val) {
     return typeof val === 'object';
+  },
+
+  'class': function _class(className) {
+    return function (val) {
+      if (val.constructor !== null) {
+        return val.constructor.name === className;
+      }
+
+      return false;
+    };
   },
 
   any: function any(val) {
