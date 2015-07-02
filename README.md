@@ -1,4 +1,4 @@
-# ES7 Decorators + Strict Typing
+# ES7 Decorators + Type Hints
 
 This is an experiment I am playing around with in implementing basic argument
 typing in javascript using ES7's Decorator feature.
